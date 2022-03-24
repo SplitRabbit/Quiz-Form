@@ -62,7 +62,7 @@ body {
   
   /* Score Card Styles */
   
-  .inline-form {
+  #submission-form {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

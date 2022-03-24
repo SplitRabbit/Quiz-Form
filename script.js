@@ -1,3 +1,9 @@
+//declare global variables
+  var intervalID;
+  var time;
+  var currentQuestion;
+  var numbercorrect;
+
 //store quiz questions in array
 const questions = [
     {
@@ -40,12 +46,14 @@ const questions = [
         answer: "a) <script src=\"xxx.js\">",
     },
     {
-        questionText: "5. An external JavaScript must contain the <script> tag",
+        questionText: "7. How do you create a function?",
         options: [
-            "a) True",
-            "b) False",
+            "a) function:myFunction()",
+            "b) function=myFunction()",
+            "c) function myFunction()",
+            "d) myFunction():function",
         ],
-        answer: "a) True",
+        answer: "a) c) function myFunction()",
     },
   ];
   
@@ -71,12 +79,6 @@ const questions = [
   function hideResultText() {
     resultDiv.style.display = "none";
   }
-  
-  //these variables are required globally
-  var intervalID;
-  var time;
-  var currentQuestion;
-  var numbercorrect;
   
   document.querySelector("#start-button").addEventListener("click", startQuiz);
   
@@ -136,6 +138,7 @@ const questions = [
     resultDiv.style.display = "block";
     if (optionIsCorrect(optionButton)) {
       resultText.textContent = "Correct!";
+      numbercorrect = numbercorrect +1
       setTimeout(hideResultText, 1000);
     } else {
       resultText.textContent = "Incorrect!";
@@ -192,7 +195,7 @@ const questions = [
     //store score and initials in an object
     let leaderboardItem = {
       initials: inputElement.value,
-      score: time,
+      score: numbercorrect.toString() + "/" + questions.length ,
     };
   
     updateStoredLeaderboard(leaderboardItem);
