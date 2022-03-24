@@ -4,6 +4,14 @@
   var currentQuestion;
   var numbercorrect;
 
+  
+  //select cards by div and record them as unchanging constant var
+  const startCard = document.querySelector("#start-card");
+  const questionCard = document.querySelector("#question-card");
+  const scoreCard = document.querySelector("#score-card");
+  const leaderboardCard = document.querySelector("#leaderboard-card");
+  
+  
 //store quiz questions in array
 const questions = [
     {
@@ -56,14 +64,7 @@ const questions = [
         answer: "a) c) function myFunction()",
     },
   ];
-  
-  //select each card div by id and assign to variables
-  const startCard = document.querySelector("#start-card");
-  const questionCard = document.querySelector("#question-card");
-  const scoreCard = document.querySelector("#score-card");
-  const leaderboardCard = document.querySelector("#leaderboard-card");
-  
-  
+
   //hide all cards
   function hideCards() {
     startCard.setAttribute("hidden", true);
