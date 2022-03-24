@@ -9,4 +9,4 @@ At the end of the quiz, you will have the choice to add your project to an order
 
 Deployed Application is live [here](https://splitrabbit.github.io/Quiz-Form/) .
 
-Screenshot: ![alt text](./Screen%20Shot%202022-03-24%20at%203.33.59%20PM.png "Deployed Application")
+Screenshot: ![alt text](./Deployed.png "Deployed Application")

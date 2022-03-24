@@ -123,16 +123,15 @@ const questions = [
     }
   }
   
-  //behaviour when an answer button is clicked: click event bubbles up to div with id "quiz-options"
-  //eventObject.target identifies the specific button element that was clicked on
+  //add event listener to multiple choice answers
   document.querySelector("#quiz-options").addEventListener("click", checkAnswer);
   
-  //Compare the text content of the option button with the answer to the current question
+  //Compare correct answer with submitted answer, returning true for correct and false for incorrect
   function optionIsCorrect(optionButton) {
     return optionButton.textContent === questions[currentQuestion].answer;
   }
   
-  //if answer is incorrect, penalise time
+  //check answer and subtract time for incorrect answers
   function checkAnswer(eventObject) {
     let optionButton = eventObject.target;
     resultDiv.style.display = "block";
@@ -147,9 +146,7 @@ const questions = [
         time = time - 10;
         displayTime();
       } else {
-        //if time is less than 10, display time as 0 and end quiz
-        //time is set to zero in this case to avoid displaying a negative number in cases where a wrong answer is submitted with < 10 seconds left on the timer
-        time = 0;
+         time = 0;
         displayTime();
         endQuiz();
       }
@@ -157,7 +154,7 @@ const questions = [
   
     //increment current question by 1
     currentQuestion++;
-    //if we have not run out of questions then display next question, else end quiz
+    //display next question or end quiz
     if (currentQuestion < questions.length) {
       displayQuestion();
     } else {
@@ -203,7 +200,6 @@ const questions = [
     //hide the question card, display the leaderboardcard
     hideCards();
     leaderboardCard.removeAttribute("hidden");
-  
     renderLeaderboard();
   }
   
