@@ -1,0 +1,104 @@
+/* Body Styles */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0px;
+  }
+  
+  /* Header Styles  */
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    background-color: purple;
+    color: #ffffff;
+    padding: 3vh;
+  }
+
+  /* Main Styles */
+  
+  main {
+    display: flex;
+    margin-left: 25%;
+  }
+  
+  /* Button Styles */
+  
+  .button {
+    display: block;
+    color: #ffffff;
+    background-color: purple;
+    padding: 2vh;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .inline-buttons {
+    display: inline-flex;
+  }
+  
+  
+  /* Start Card Styles */
+  
+  #start-screen {
+    display: inline;
+    text-align: center;
+  }
+  
+  /* Question Card Styles */
+  
+  .option-button {
+    background-color: purple;
+    width: 50%;
+    text-align: left;
+    margin: 20px;
+  }
+  
+  #result-div {
+    display: none;
+  }
+  
+  /* Score Card Styles */
+  
+  .inline-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  #initials {
+    width: 25%;
+    margin: 8px;
+    padding: 1vh;
+  }
+  
+  /* Leaderboard Card Styles */
+  
+  #back-button {
+    margin-right: 8px;
+  }
+  
+  .highscore-list {
+    padding-inline-start: 20px;
+  }
+  
+  /* Media Queries */
+  
+  @media screen and (min-width: 850px) {
+    .card {
+      max-width: 680px;
+    }
+  }
+  
+  /* Media query that specifies devices that can utilize hover */
+  @media (hover) {
+    /* Stylings pertaining to hover pseudo-class*/
+    a:hover {
+      color: #a865c9;
+    }
+  
+    button:hover {
+      background-color:#a865c9;
+    }
+  }
