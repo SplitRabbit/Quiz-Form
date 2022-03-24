@@ -76,10 +76,12 @@ const questions = [
   var intervalID;
   var time;
   var currentQuestion;
+  var numbercorrect;
   
   document.querySelector("#start-button").addEventListener("click", startQuiz);
   
   function startQuiz() {
+    numbercorrect = 0;
     hideCards();
     questionCard.removeAttribute("hidden");
     currentQuestion = 0;
@@ -168,7 +170,7 @@ const questions = [
     clearInterval(intervalID);
     hideCards();
     scoreCard.removeAttribute("hidden");
-    score.textContent = time;
+    score.textContent = numbercorrect.toString() + "/" + questions.length ;
   }
   
   const submitButton = document.querySelector("#submit-button");
